@@ -19,10 +19,12 @@ Or manually:
 
     $ R CMD INSTALL rhive/build/rhive*.tar.gz
 
-Note: You can use gradle to build and install the package on the Hive/Hadoop server with just
+You can use gradle to build and install the package on the Hive/Hadoop server with just
 
     $ gradle clean install
 
+
+Note:  As with any R package, the package dependencies must be installed in order to install the package.  Of particular note for rhive are the RHadoop packages rhdfs and rmr2 which require some configuration as indicated on the [RHadoop website](https://github.com/RevolutionAnalytics/RHadoop).
 
 
 In order to be able to use rhive, several variables must be set.  These are:
