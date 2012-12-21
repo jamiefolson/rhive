@@ -1,0 +1,10 @@
+Package: rhive
+Version: 0.1
+Type: Package
+Title: Perform operations on Hive tables
+Date: 2012-09-20
+Author: Jamie F Olson
+Maintainer: Jamie F Olson <jamie@sonamine.com>
+Description: More will be forthcoming
+License: None
+Depends: R (>= 2.14.0), stringr, RJDBC, logging, rJava, methods, rsql, reshape2

@@ -1,0 +1,1 @@
+include 'rhive', 'rhive-serde', 'rhive-udf'

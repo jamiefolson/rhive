@@ -1,0 +1,39 @@
+apply plugin: 'rpackage'
+
+project.group = 'com.sonamine'
+project.version = '0.1'
+
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+  dependencies {
+    classpath group: 'com.sonamine', name: 'gradle-plugin-r', version: '1.0-SNAPSHOT'
+  }
+}
+
+project.buildRPackage.dependsOn ':rhive-serde:jar'
+project.buildRPackage.dependsOn ':rhive-udf:jar'
+
+task copyJar(type:Copy) {
+  dependsOn ":rhive-serde:jar"
+  dependsOn ":rhive-udf:jar"
+  project.gradle.projectsEvaluated {
+    from(project(":rhive-serde").jar.destinationDir) {
+      include "*.*"
+    }
+    into "${project.rpackage.buildDir}/inst/java/"
+    from(project(":rhive-udf").jar.destinationDir) {
+      include "*.*"
+    }
+    into "${project.rpackage.buildDir}/inst/java/"
+  }
+}
+
+buildRPackage.dependsOn copyJar
+
+rpackage {
+  packageDir = 'pkg'
+  packageName = 'rhive'
+}
