@@ -8,7 +8,7 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath group: 'com.jfolson', name: 'gradle-plugin-r', version: '1.0-SNAPSHOT'
+    classpath group: 'com.jfolson', name: 'gradle-plugin-r', version: '0.1-SNAPSHOT'
   }
 }
 
@@ -33,6 +33,6 @@ task copyJar(type:Copy) {
 buildRPackage.dependsOn copyJar
 
 rpackage {
-  packageDir = 'pkg'
-  packageName = 'rhive'
+  srcDir = file('pkg')
+  name = 'rhive'
 }
