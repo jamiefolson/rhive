@@ -1,1 +1,1 @@
-include 'rhive', 'hive-streaming-serde', 'rhive-udf'
+include 'rhive', 'rhive-streaming-serde', 'rhive-udf'

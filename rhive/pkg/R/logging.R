@@ -5,7 +5,7 @@ logging.sql <- function(record) {
 }
 
 ##' @import logging
-#LOG <- getLogger('com.sonamine.rhive')
+#LOG <- getLogger('com.jfolson.rhive')
 #LOG$addHandler(writeToFile,file="rhive.log",level='INFO',
 #    formatter=logging.sql)
 #

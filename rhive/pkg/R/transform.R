@@ -248,9 +248,9 @@ hiveTransform = function(
   hdfs.put(rmr.local.env,paste("hdfs://",rmr.local.env,sep=""))
   hdfs.put(rmr.global.env,paste("hdfs://",rmr.global.env,sep=""))
 
-  rhive.serde="ROW FORMAT SERDE 'com.sonamine.hive.serde.RTypedBytesSerDe'"
-  rhive.record.writer = "RECORDWRITER 'com.sonamine.hive.serde.RTypedBytesRecordWriter'"
-  rhive.record.reader="RECORDREADER 'com.sonamine.hive.serde.RTypedBytesRecordReader'"
+  rhive.serde="ROW FORMAT SERDE 'com.jfolson.hive.serde.RTypedBytesSerDe'"
+  rhive.record.writer = "RECORDWRITER 'com.jfolson.hive.serde.RTypedBytesRecordWriter'"
+  rhive.record.reader="RECORDREADER 'com.jfolson.hive.serde.RTypedBytesRecordReader'"
 
   map.result = "AS (key BINARY, value BINARY)"
 
