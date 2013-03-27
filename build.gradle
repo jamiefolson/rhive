@@ -1,1 +1,4 @@
-version = '0.1-SNAPSHOT'
+allprojects {
+    version = '0.1-SNAPSHOT'
+    group = 'com.jfolson'
+    }

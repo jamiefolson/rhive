@@ -59,7 +59,7 @@ convert_result_row <- function(x,types,x.names=names(x)) {
 #' @param hivecon rhivecon RJDBC connection
 #' @export
 #' @import stringr RJSONIO
-from.hivetable <- function(X,N=NULL,hivecon=rhive.options("connection")){
+from.hive <- function(X,N=NULL,hivecon=rhive.options("connection")){
   stmt <- X$select()
   stmt <- paste0(paste0(to_sql(stmt),collapse="\n"),
       if (!is.null(N)) {
@@ -80,7 +80,7 @@ from.hivetable <- function(X,N=NULL,hivecon=rhive.options("connection")){
 #' @param hivecon a jdbc connection to the hive server
 #' @export
 #' 
-to.hivetable <- function(X,name,hivecon=rhive.options("connection")) {
+to.hive <- function(X,name,hivecon=rhive.options("connection")) {
   hive.create(name,data=X,hivecon=hivecon)
 }
 

@@ -1,0 +1,3 @@
+[submodule "rhive-streaming-serde"]
+	path = rhive-streaming-serde
+	url = https://github.com/jamiefolson/rhive-streaming-serde.git
